@@ -44,7 +44,7 @@ const checkForColorKey = (req, res, next) => {
 // CREATE ROUTE! Creates a new resource on the server.
 colors.post('/', checkForColorKey, (req, res) => {
   const { name } = req.body;
-  colorsArray.push(name);
+  colorsArray.push({ name: name }); // {name}
   res.send('Ok');
 });
 

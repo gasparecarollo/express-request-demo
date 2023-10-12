@@ -1,6 +1,14 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+
+// console.log in the terminal
+
+app.use(cors());
+
+
+
 const colorsController = require('./controllers/colorsController.js');
 const shapesController = require('./controllers/shapesController.js');
 
