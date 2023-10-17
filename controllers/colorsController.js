@@ -48,6 +48,17 @@ colors.post('/', checkForColorKey, (req, res) => {
   res.send('Ok');
 });
 
+
+// CREATE ROUTE! Creates a new resource on the server.
+// IF we want it to handle whether the color is a 'Favorite'
+//Simply colorsArray.push(req.body). You can remove const { name, isFavorite } = req.body;
+colorsArray.push({ name: name, isFavorite: isFavorite })
+colors.post('/', checkForColorKey, (req, res) => {
+  const { name, isFavorite } = req.body;
+  colorsArray.push({ name: name, isFavorite: isFavorite }); // {name} and {isFavorite}
+  res.send('Ok');
+});
+
 // You can do it lots of ways. But follow the conventions.
 colors.delete('/:id', (req, res) => {
   const { id } = req.params;
